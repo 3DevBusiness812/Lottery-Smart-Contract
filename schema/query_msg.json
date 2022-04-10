@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QueryMsg",
+  "anyOf": [
+    {
+      "description": "Get the config state",
+      "type": "object",
+      "required": [
+        "config"
+      ],
+      "properties": {
+        "config": {
+          "type": "object"
+        }
+      }
+    },
+    {
+      "description": "Get the last randomness",
+      "type": "object",
+      "required": [
+        "latest_drand"
+      ],
+      "properties": {
+        "latest_drand": {
+          "type": "object"
+        }
+      }
+    },
+    {
+      "description": "Get a specific randomness",
+      "type": "object",
+      "required": [
+        "get_randomness"
+      ],
+      "properties": {
+        "get_randomness": {
+          "type": "object",
+          "required": [
+            "round"
+          ],
+          "properties": {
+            "round": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "Combination lottery numbers and address",
+      "type": "object",
+      "required": [
+        "combination"
+      ],
+      "properties": {
+        "combination": {
+          "type": "object"
+        }
+      }
+    },
+    {
+      "description": "Winner lottery rank and address",
+      "type": "object",
+      "required": [
+        "winner"
+      ],
+      "properties": {
+        "winner": {
+          "type": "object"
+        }
+      }
+    },
+    {
+      "description": "Get specific poll",
+      "type": "object",
+      "required": [
+        "get_poll"
+      ],
+      "properties": {
+        "get_poll": {
+          "type": "object",
+          "required": [
+            "pollId"
+          ],
+          "properties": {
+            "pollId": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "Get the specific round to query from Drand to play the lottery",
+      "type": "object",
+      "required": [
+        "get_round"
+      ],
+      "properties": {
+        "get_round": {
+          "type": "object"
+        }
+      }
+    }
+  ]
+}
